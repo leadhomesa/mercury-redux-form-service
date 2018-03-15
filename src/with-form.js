@@ -7,11 +7,14 @@ import {getForm, getLoadFormStatus, getSaveFormStatus} from './selectors';
 class WithForm extends React.PureComponent {
   static defaultProps = {
     onSaveSuccess: () => null
+    disableInitialLoad: false
   };
 
   componentDidMount() {
-    const {url, loadForm} = this.props;
-    loadForm(url);
+    const {url, loadForm, disableInitialLoad} = this.props;
+
+    if (!disableInitialLoad)
+      loadForm(url);
   }
 
   onSave = form => {
