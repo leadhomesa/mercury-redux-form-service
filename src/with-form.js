@@ -6,7 +6,7 @@ import {getForm, getLoadFormStatus, getSaveFormStatus} from './selectors';
 
 class WithForm extends React.PureComponent {
   static defaultProps = {
-    onSaveSuccess: () => null
+    onSaveSuccess: () => null,
     disableInitialLoad: false
   };
 
